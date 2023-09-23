@@ -23,10 +23,16 @@ describe Cell do
     describe '#update_status' do
         subject{ cell.update_status }
 
-        context 'with dead neighbors' do
+        context 'Rule #1: Any live cell with fewer than two live neighbours dies' do
         end
 
-        context 'with 3 alive neighbors' do
+        context 'Rule #2: Any live cell with two or three live neighbours lives on to the next generation' do
+        end
+
+        context 'Rule #3: Any live cell with more than three live neighbours dies, as if by overpopulation' do
+        end
+
+        context 'Rule #4: Any dead cell with exactly three live neighbours becomes a live cell' do
             before do
                 board.cell_at(x,y-1).alive = true
                 board.cell_at(x,y+1).alive = true
@@ -39,6 +45,16 @@ describe Cell do
         end
     end
 
+    describe '#neighbor_count' do
+        context 'when neighbors are dead' do
+        end
 
-    # TODO: All the rules
+        context 'when neighbors are alive' do
+            it 'will return 1 when single alive neighbor' do
+            end
+
+            it 'will return 4 when four or more alive neighbors' do
+            end
+        end
+    end
 end
