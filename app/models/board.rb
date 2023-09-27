@@ -1,9 +1,9 @@
 require './app/models/cell.rb'
 
 class Board
-    attr_reader :width, :height
+    attr_reader :height, :width, :cells
 
-    def initialize(width, height)
+    def initialize(height, width)
         @width = width
         @height = height
         @cells = []
@@ -16,6 +16,12 @@ class Board
         end
     end
 
+    def cell_at(x, y)
+        @cells[x][y]
+    end
+
+    private
+
     def next_generation
         # Look at each cell's neighbors and see whether this cell is alive or dead now.
         @cells.each do |row|
@@ -23,9 +29,5 @@ class Board
                 cell.update_status
             end
         end
-    end
-
-    def cell_at(x, y)
-        @cells[x][y]
     end
 end

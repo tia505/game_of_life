@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Cell, type: :model do
   let(:board) { Board.new(3,4) }
-  let(:x) {1}
-  let(:y) {2}
+  let(:x) {2}
+  let(:y) {1}
   let(:cell) { Cell.new(board, x, y) }
   
   context 'when initialized' do
