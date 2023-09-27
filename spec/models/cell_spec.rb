@@ -57,7 +57,7 @@ RSpec.describe Cell, type: :model do
   def activate_neighbors(number_of_cells)
       number_of_cells.times do |i|
           neighbor = Cell::NEIGHBORS[i]
-          board.cell_at( x + neighbor[0], y + neighbor[1] ).alive = true
+          board.cell_at( cell.x + neighbor[0], cell.y + neighbor[1] ).alive = true
       end
   end
 end
