@@ -1,8 +1,7 @@
-# README
-Conway's Game of Life
+# Conway's Game of Life
 https://playgameoflife.com/
 
-# RULES
+## Rules
 Cells live and die by the amount of neighbors they have in the 8 matrix spaces around them.
 
 No. Neighbors   | Cell Status
@@ -11,7 +10,7 @@ No. Neighbors   | Cell Status
 2, 3            | Alive
 3               | Dead -> Alive
 
-# VERSIONS
+## Versions
 Language | Version
 ---------|---------
 Ruby     | 3.2.2
